@@ -1,0 +1,126 @@
+# Задача №1 (чет/нечет)
+number = int(input('Введите число: '))
+if number % 2 == 0:
+    print(f"Число {number} чётное")
+else:
+    print(f"Число {number} нечётное")
+
+
+
+
+# Задача №2 (угол в четверти)
+corner = int(input())
+while 0 <= corner <=360:
+    if 0 <= corner <= 90:
+        print("1 четверть")
+    elif 91 <= corner <= 180:
+        print("2 четверть")
+    elif 181 <= corner <= 270:
+        print("3 четверть")
+    elif 271 <= corner <= 360:
+        print('4 четверть')
+else:
+    print("угол не лежит в пределах от 0 до 360 градусов")
+
+
+
+
+# Задача №3 (Устройство на работу)
+age, experience = int(input('Введите возраст: ')), int(input('Введите стаж: '))
+if age >= 20 and experience >=3:
+    print('Человек подходит под требование фирмы')
+else:
+    print('Человек не подходит под требования фирмы')
+
+
+
+# Задача №4 (Времена года)
+number = int(input())
+if number in [1,2,12]:
+    print("Ваше время года - Зима")
+elif number in [3,4,5]:
+    print("Ваше время года - Весна")
+elif number in [6,7,8]:
+    print("Ваше время года - Лето")
+elif number in [9,10,11]:
+    print("Ваше время года - Осень")
+
+
+
+
+# Задача №5 (числа от 0 до 100 кратные 4)
+for i in range (0,101):
+    if i % 4 == 0:
+        print(i)
+
+
+
+# Задача №6 (Словарь)
+dict_ = {"name": "Kirill", "age":44}
+for key in dict_:
+    print(key, ':', dict_[key])
+
+
+
+
+
+# Задача №7 (сумма чисел от 1 до number)
+number = int(input())
+sum = 0
+for i in range(1,number+1):
+    sum +=i
+print(sum)
+
+
+
+# Задача №8(Калькулятор)
+next ='yes'
+while next == "yes":
+    first_number = input('Введите первую цифру: ')
+    if first_number not in '123456789':
+        print('ввести можно только числовое значение')
+        break
+    second_number = input('Введите вторую цифру: ')
+    if second_number not in '123456789':
+        print('ввести можно только числовое значение')
+        break
+    sign = input('Введите знак операции(+,-,*,/): ')
+    if sign not in ("+", "-", "*", "/"):
+        print('Данная функция не поддерживается, выбирите другую функцию')
+        break
+    if sign == "+":
+        print(f"Сумму ваших цифр равна:{int(first_number) + int(second_number)}")
+    elif sign == "-":
+        print(f"Разность ваших цифр равна:{int(first_number) - int(second_number)}")
+    elif sign == "*":
+        print(f"Произведение ваших цифр равна:{int(first_number) * int(second_number)}")
+    elif sign == "/":
+        if second_number != 0:
+            print(f"Деление ваших цифр равна:{int(first_number) / int(second_number)}")
+        else:
+            print('На ноль делить нельзя!')
+    next = input("Ведите 'yes' если хотите продолжить, либо нажмите любую клавишу, если хотите что-бы программа завершила работу: ")
+
+
+
+
+
+# Задача №9(таблица умножения)
+number = int(input('Введите на сколько надо таблица умножения'))
+for i in range(1, number+1):
+    for k in range (1, 11):
+        print(i,'x', k,'=',k*i)
+    print()
+
+
+
+# Задача №10 (Перевернутое число)
+number = 1234
+number_revers = 0
+while number > 0:
+    digit = number % 10
+    number //= 10
+    number_revers *= 10
+    number_revers += digit
+print(number_revers)
+
