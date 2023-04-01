@@ -76,11 +76,11 @@ print(sum)
 next ='yes'
 while next == "yes":
     first_number = input('Введите первую цифру: ')
-    if first_number not in '123456789':
+    if first_number.isdigit() != True:
         print('ввести можно только числовое значение')
         break
     second_number = input('Введите вторую цифру: ')
-    if second_number not in '123456789':
+    if second_number.isdigit() != True:
         print('ввести можно только числовое значение')
         break
     sign = input('Введите знак операции(+,-,*,/): ')
