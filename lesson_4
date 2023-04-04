@@ -1,0 +1,28 @@
+# Задача №1 (Палиндром)
+def is_polendrom(text1):
+    for i in text1:
+        if i.isalpha() == False:
+            text1 = text1.replace(i, '')
+    return text1 == text1[::-1]
+text = input().lower()
+print(is_polendrom(text))
+
+
+
+
+#Задача №2 (Счёт)
+text = input('Введите текст: ')
+table = {}
+for i in set(text):
+    table[i] = text.count(i)
+print (table)
+
+
+
+
+# Задача №3 (Списки)
+def func ():
+    a = [1,2,3]
+    b = [4,5,6]
+    return a+b
+print('result =', func ())
