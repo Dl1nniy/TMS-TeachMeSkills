@@ -26,3 +26,28 @@ def func ():
     b = [4,5,6]
     return a+b
 print('result =', func ())
+
+
+
+
+# Задача №4 (замена ключей и значений)
+def swap_key_value(dict_):
+    dict1 = {}
+    for key in dict_.keys():
+        dict1[dict_[key]]=key
+    return dict1
+
+
+dict1 = {
+    'key1': 'value1',
+    'key2': 'value2',
+    'key3': 'value3',
+}
+print(swap_key_value(dict1))
+
+
+
+# Задача №5 (проверка числа на четность)
+check_number = lambda a: print(f'Число {a} четное') if not a % 2 else print(f'число {a} нечетное')
+number = int(input('Введите число: '))
+check_number(number)
