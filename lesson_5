@@ -1,0 +1,48 @@
+# Задача №1 (фильтрация списка)
+
+list_ = ['saxct','qwe','12','2q31','s1','gh1','adsfgw','123','as12',]
+new_list = list(filter(lambda x: x.isalpha(), list_))
+print(new_list)
+
+
+
+
+# Задача №2 (среднеарифмитическое значение списка)
+
+from functools import reduce
+list_ = [10, 20, 30, 40]
+sum_ = reduce(lambda d, x: d + x , list_)
+result = sum_/len(list_)
+print(result)
+
+
+
+
+Задача №3 (добавление ключа)
+persons = [
+    {"name": "Vasya", "birth_year": 1999},
+    {"name": "Valentin", "birth_year": 1934},
+    {"name": "Petr", "birth_year": 2005},
+]
+persons_update = list(map(lambda dict_: dict_.update({'age': 2023 - dict_["birth_year"]}), persons))
+print(persons)
+
+
+
+
+Задача №4 (Елена)
+def lena_for_Lena (func):
+    def wrapper():
+        name = func()
+        if name == name.capitalize():
+            print(name)
+        else:
+            return name.capitalize()
+
+    return wrapper
+
+@lena_for_Lena
+def lena_for_Lena():
+    return ("lena")
+
+print(lena_for_Lena())
