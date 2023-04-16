@@ -1,0 +1,71 @@
+                                                                        Задачи на функции
+                                                                        
+#Задание 2: написать программу для вычисления факториала. Факториал - 1 * 2 * 3 ... * n
+def get_facrorial(n):
+    sum = 1
+    for i in range(1,n+1):
+        sum *= i
+    return sum
+print(get_facrorial(6))
+
+
+
+
+#Задание 4: написать функцию для определения наибольшего числа(реализовать свой max)
+def get_max_number(max, *args):
+    for i in args:
+        print(max)
+        if max < i: max = i
+    return max
+print(max(1,6,1,47,1,12,123,167,11,-1,25))
+
+
+
+
+                                                                         Задачи на Декораторы                
+
+#Задача 4: написать декоратор для функции, который добавляет 1 к каждому целочисленному агрументу:
+
+def add_one_to_order(func):
+    def get_result(*args):
+        result = func(*args)
+        final = []
+        for i in result:
+            if isinstance(i,int):
+                final.append(i+1)
+            else:
+                final.append(i)
+        final = tuple(final)
+        return final
+    return get_result
+
+@add_one_to_order
+def func(*args):
+    return args
+
+
+print(func(1,2,3,'string'))
+
+
+
+
+#Задача 6: Написать декоратор, который будет просить пользователя
+# ввести число до тех пор, пока он не введет положительное число
+
+def counter(func):
+    def inner():
+        result = func()
+        while result <= 0:
+            if result > 0:
+                print(f'Вваше число {result} положительное!')
+            else:
+                result = int(input("Введите положительное число: "))
+        return result
+    return inner
+
+
+@counter
+def plus():
+    return int(input('Введите число: '))
+
+plus()
