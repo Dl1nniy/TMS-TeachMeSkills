@@ -69,3 +69,29 @@ def plus():
     return int(input('Введите число: '))
 
 plus()
+
+
+
+
+dict_ = {'фрукт': 'яблоко', 'машина': 'легковая', 'день': 'ясный'}
+key = ['марафон']
+def func(dict_, key):
+    try:
+        return dict_['фрукт']
+    except KeyError:
+        return None
+print(func(dict_, key))
+
+
+
+
+first_str = input('Введите первую строку: ')
+second_str = input('Введите вторую строку: ')
+third_str = input('Введите третью строку: ')
+fourth_str = input('Введите четвертую строку: ')
+with open("new_txt_example.txt", 'w+') as write_file:
+    write_file.write(str(first_str + '\n'))
+    write_file.write(str(second_str + '\n'))
+with open("new_txt_example.txt", 'a') as write_file:
+    write_file.write(str(third_str + '\n'))
+    write_file.write(str(fourth_str + '\n'))
